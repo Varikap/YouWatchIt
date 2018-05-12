@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf8'>
+	<link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet" type="text/css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<title>Insert title here</title>
+	
+	<script>
+		$(document).ready(function(e) {
+		
+				$('#submitButton').click(function() {
+					var username = $('#username');
+					var password = $('#password');
+					params = {'username':username.val(), 'password':password.val()};
+			
+					$.post('LoginServlet',params, function(data) {
+						console.log(data);
+				
+						//dodati paragrafe za failure
+					if(data.message == 'Success') {
+						window.location.replace('index.html');
+					}
+				
+						username.val('');
+						password.val('');
+					});
+			
+				});
+		
+		
+		
+			});	
+	</script>
+</head>
+<body>
+	<p>Username: </p> <input type="text" id="uname">
+	<p>Password: </p> <input type="password" id="pass">
+	<input type="submit" value="Submit" id="submitButton">
+</body>
+</html>

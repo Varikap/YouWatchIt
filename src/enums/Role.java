@@ -1,15 +1,25 @@
 package enums;
 
 public enum Role {
-	USER("User"), ADMIN("Admin");
+	ADMINISTRATOR,
+	USER;
 	
-	private String label;
-	
-	private Role(String label) {
-		this.label = label;
+	public static Role getRole(int x) {
+		switch(x) {
+		case 1:
+			return ADMINISTRATOR;
+			default:
+				return USER;
+				
+		}
 	}
-
-	public String getLabel() {
-		return this.label;
+	
+	public static int getUsersRoleInt(Role role) {
+		switch(role) {
+		case ADMINISTRATOR:
+			return 1;
+		default:
+			return 0;
+		}
 	}
 }
