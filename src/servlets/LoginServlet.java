@@ -28,6 +28,8 @@ public class LoginServlet extends HttpServlet {
 		System.out.println("KRENUOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOo");
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
+		System.out.println(username);
+		System.out.println(password);
 		String msg = "Success";
 		
 		if(UserDAO.usernameExists(username) == false)
@@ -44,6 +46,7 @@ public class LoginServlet extends HttpServlet {
 				session.setAttribute("loggedInUser", user);
 			}
 		}
+		System.out.println(msg);
 		HashMap<String, Object> data = new HashMap<String,Object>();
 		data.put("msg", msg);
 		ObjectMapper mapper = new ObjectMapper();
@@ -51,5 +54,7 @@ public class LoginServlet extends HttpServlet {
 		
 		response.setContentType("application/json");
 		response.getWriter().write(jsonData);
+		System.out.println(jsonData);
+		return;
 	}
 }

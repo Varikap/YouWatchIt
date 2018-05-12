@@ -12,8 +12,8 @@ public class ConnectionManager {
 	
 	public static void open() {
 		try {
-			Class.forName("org.mariadb.jdbc.Driver").newInstance();
-			connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/YouWatchIt?user=root&password=");
+			Class.forName("org.mariadb.jdbc.Driver");
+			connection = DriverManager.getConnection("jdbc:mariadb://" + DATABASE + "?user=" + USER_NAME + "&password=" + PASSWORD);
 		}catch (Exception e) {
 			e.printStackTrace();
 		}

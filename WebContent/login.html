@@ -17,20 +17,21 @@
 		$(document).ready(function(e) {
 		
 				$('#submitButton').click(function() {
-					var username = $('#username');
-					var password = $('#password');
+					var username = $('#uname');
+					var password = $('#pass');
 					params = {'username':username.val(), 'password':password.val()};
-			
+					console.log("pera");
 					$.post('LoginServlet',params, function(data) {
 						console.log(data);
+						console.log("pera");
 				
 						//dodati paragrafe za failure
-					if(data.message == 'Success') {
-						window.location.replace('index.html');
-					}
-				
+					if(data.msg == 'Success') {
+						window.location.replace('http://localhost:8080/YouWatchIt/index.html');
+					} else {
 						username.val('');
 						password.val('');
+					}
 					});
 			
 				});
@@ -41,8 +42,10 @@
 	</script>
 </head>
 <body>
+<form>
 	<p>Username: </p> <input type="text" id="uname">
 	<p>Password: </p> <input type="password" id="pass">
 	<input type="submit" value="Submit" id="submitButton">
+</form>
 </body>
 </html>
