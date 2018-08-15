@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class ConnectionManager {
-	private static final String DATABASE = "localhost:3306/YouWatchIt";
+	private static final String DATABASE = "localhost:3306/webprojekat";
 	private static final String USER_NAME = "root";
 	private static final String PASSWORD = "";
 	

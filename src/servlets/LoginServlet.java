@@ -32,12 +32,11 @@ public class LoginServlet extends HttpServlet {
 		System.out.println(password);
 		String msg = "Success";
 		
-		if(UserDAO.usernameExists(username) == false)
+		if(!UserDAO.usernameExists(username))
 			msg = "Username does not exist";
 		else {
 		User user = UserDAO.getUser(username);
 			System.out.println(user.getEmail());
-			System.out.println(user.getLastName());
 			System.out.println(user.getClass());
 			if (!user.getPassword().equals(password))
 				msg = "password is incorrect";

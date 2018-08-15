@@ -1,10 +1,10 @@
 package enums;
 
-public enum Role {
+public enum User_Role {
 	ADMINISTRATOR,
 	USER;
 	
-	public static Role getRole(int x) {
+	public static User_Role getRole(int x) {
 		switch(x) {
 		case 1:
 			return ADMINISTRATOR;
@@ -14,7 +14,7 @@ public enum Role {
 		}
 	}
 	
-	public static int getUsersRoleInt(Role role) {
+	public static int getUsersRoleInt(User_Role role) {
 		switch(role) {
 		case ADMINISTRATOR:
 			return 1;

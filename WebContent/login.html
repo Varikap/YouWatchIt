@@ -19,12 +19,14 @@
 				$('#submitButton').click(function() {
 					var username = $('#uname');
 					var password = $('#pass');
-					params = {'username':username.val(), 'password':password.val()};
-					console.log("pera");
+					params = {
+								username : username.val(),
+								password : password.val()
+							 };
 					$.post('LoginServlet',params, function(data) {
 						console.log(data);
 						console.log("pera");
-				
+						alert(data.msg);
 						//dodati paragrafe za failure
 					if(data.msg == 'Success') {
 						window.location.replace('http://localhost:8080/YouWatchIt/index.html');
@@ -32,7 +34,7 @@
 						username.val('');
 						password.val('');
 					}
-					});
+					},'json');
 			
 				});
 		
