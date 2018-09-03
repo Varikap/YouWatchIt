@@ -3,7 +3,6 @@ package model;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-import enums.Like_Dislike;
 import enums.User_Role;
 
 public class User {

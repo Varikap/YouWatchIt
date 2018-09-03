@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import enums.Like_Dislike;
 import enums.User_Role;
 import enums.Video_Comment;
+import model.Like_Dislike;
 import model.User;
 import utils.ConnectionManager;
 

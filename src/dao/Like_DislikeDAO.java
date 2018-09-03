@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-import enums.Like_Dislike;
 import enums.Video_Comment;
+import model.Like_Dislike;
 import utils.ConnectionManager;
 
 public class Like_DislikeDAO {

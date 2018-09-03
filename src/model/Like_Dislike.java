@@ -1,6 +1,8 @@
-package enums;
+package model;
 
 import java.time.LocalDate;
+
+import enums.Video_Comment;
 
 public class Like_Dislike {
 	private int ID;

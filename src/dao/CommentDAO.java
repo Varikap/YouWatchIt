@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import enums.Like_Dislike;
 import enums.Video_Comment;
 import model.Comment;
+import model.Like_Dislike;
 import utils.ConnectionManager;
 
 public class CommentDAO {
