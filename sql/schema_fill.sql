@@ -37,7 +37,7 @@ CREATE TABLE FOLLOWING(
 );
 
 INSERT INTO FOLLOWING(followed_username, following_username) VALUES('nikola', 'pera');
-INSERT INTO FOLLOWING(followed_username, following_username) VALUES('nikola', 'djura';
+INSERT INTO FOLLOWING(followed_username, following_username) VALUES('nikola', 'djura');
 INSERT INTO FOLLOWING(followed_username, following_username) VALUES('nikola', 'sima');
 INSERT INTO FOLLOWING(followed_username, following_username) VALUES('nikola', 'lazar');
 INSERT INTO FOLLOWING(followed_username, following_username) VALUES('milos', 'pera');

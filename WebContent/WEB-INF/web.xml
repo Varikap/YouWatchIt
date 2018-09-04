@@ -17,4 +17,24 @@
   <listener>
     <listener-class>servlets.InitListener</listener-class>
   </listener>
+  <servlet>
+    <description></description>
+    <display-name>SessionServlet</display-name>
+    <servlet-name>SessionServlet</servlet-name>
+    <servlet-class>servlets.SessionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SessionServlet</servlet-name>
+    <url-pattern>/SessionServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetVideos</display-name>
+    <servlet-name>GetVideos</servlet-name>
+    <servlet-class>servlets.GetVideos</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetVideos</servlet-name>
+    <url-pattern>/GetVideos</url-pattern>
+  </servlet-mapping>
 </web-app>

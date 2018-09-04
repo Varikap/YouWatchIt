@@ -25,35 +25,30 @@ public class LoginServlet extends HttpServlet {
     }
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("KRENUOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOo");
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		System.out.println(username);
-		System.out.println(password);
 		String msg = "Success";
 		
 		if(!UserDAO.usernameExists(username))
 			msg = "Username does not exist";
 		else {
-		User user = UserDAO.getUser(username);
-			System.out.println(user.getEmail());
-			System.out.println(user.getClass());
+			User user = UserDAO.getUser(username);
 			if (!user.getPassword().equals(password))
 				msg = "password is incorrect";
 			else {
 				HttpSession session = request.getSession();
 				session.setAttribute("loggedInUser", user);
+				System.out.println(user.getName());
 			}
 		}
-		System.out.println(msg);
 		HashMap<String, Object> data = new HashMap<String,Object>();
 		data.put("msg", msg);
+		System.out.println(msg);
 		ObjectMapper mapper = new ObjectMapper();
 		String jsonData = mapper.writeValueAsString(data);
 		
 		response.setContentType("application/json");
 		response.getWriter().write(jsonData);
-		System.out.println(jsonData);
 		return;
 	}
 }

@@ -45,11 +45,11 @@ public class VideoDAO {
 			 */
 			if (searchedVideo == null && user == null && minViews == 0 && maxViews == 0 && startDate == null
 					&& endDate == null && sortBy == null) {
-				query = "SELECT * FROM videos";
+				query = "SELECT * FROM VIDEOS";
 				pstmt = conn.prepareStatement(query);
 				// System.out.println("Prvi statement dobar");
 			} else {
-				query = "SELECT * FROM videos WHERE video_name LIKE ? AND owner_username LIKE ? AND views BETWEEN ? AND ? AND created BETWEEN ? AND ? AND deleted = 0";
+				query = "SELECT * FROM VIDEOS WHERE video_name LIKE ? AND owner_username LIKE ? AND views BETWEEN ? AND ? AND created BETWEEN ? AND ? AND deleted = 0";
 				if (sortBy == null) {
 					query += " ORDER BY created DESC;";
 				} else {
@@ -154,7 +154,7 @@ public class VideoDAO {
 		PreparedStatement pstmt = null;
 		try {
 			ResultSet rset = null;
-			String query = "SELECT * FROM videos WHERE owner_username = ? AND deleted = 0";
+			String query = "SELECT * FROM VIDEOS WHERE owner_username = ? AND deleted = 0";
 			pstmt = conn.prepareStatement(query);
 			pstmt.setString(1, x);
 			rset = pstmt.executeQuery();
@@ -191,7 +191,7 @@ public class VideoDAO {
 		PreparedStatement pstmt = null;
 		try {
 			ResultSet rset = null;
-			String query = "SELECT * FROM videos WHERE video_name LIKE ? AND deleted = 0";
+			String query = "SELECT * FROM VIDEOS WHERE video_name LIKE ? AND deleted = 0";
 			pstmt = conn.prepareStatement(query);
 			pstmt.setString(1, videoName);
 			rset = pstmt.executeQuery();
@@ -209,7 +209,7 @@ public class VideoDAO {
 		PreparedStatement pstmt = null;
 		try {
 			ResultSet rset = null;
-			String query = "SELECT * FROM videos WHERE imageURL LIKE ? AND deleted = 0";
+			String query = "SELECT * FROM VIDEOS WHERE imageURL LIKE ? AND deleted = 0";
 			pstmt = conn.prepareStatement(query);
 			pstmt.setString(1, imageURL);
 			rset = pstmt.executeQuery();
@@ -227,7 +227,7 @@ public class VideoDAO {
 		PreparedStatement pstmt = null;
 		try {
 			ResultSet rset = null;
-			String query = "SELECT * FROM videos WHERE video_embedURL = ? AND deleted = 0";
+			String query = "SELECT * FROM VIDEOS WHERE video_embedURL = ? AND deleted = 0";
 			pstmt = conn.prepareStatement(query);
 			pstmt.setString(1, videoURL);
 			rset = pstmt.executeQuery();
@@ -250,7 +250,7 @@ public class VideoDAO {
 
 		try {
 			ResultSet rset = null;
-			String query = "UPDATE videos SET views = views + 1 WHERE video_id = ? AND deleted = 0";
+			String query = "UPDATE VIDEOS SET views = views + 1 WHERE video_id = ? AND deleted = 0";
 			pstmt = conn.prepareStatement(query);
 			pstmt.setInt(1, id);
 			pstmt.executeUpdate();
@@ -260,7 +260,7 @@ public class VideoDAO {
 
 		try {
 			ResultSet rset = null;
-			String query = "SELECT * FROM videos WHERE video_id=? AND deleted = 0";
+			String query = "SELECT * FROM VIDEOS WHERE video_id=? AND deleted = 0";
 			int index = 1;
 			pstmt = conn.prepareStatement(query);
 			pstmt.setInt(1, id);
@@ -398,7 +398,7 @@ public class VideoDAO {
 			System.out.println(id);
 			System.out.println(parameter);
 			System.out.println(value);
-			String query = "UPDATE videos SET " + parameter.toString() + " = ? WHERE video_id = ?";
+			String query = "UPDATE VIDEOS SET " + parameter.toString() + " = ? WHERE video_id = ?";
 			pstmt = conn.prepareStatement(query);
 			switch (parameter) {
 			case "description":
@@ -448,7 +448,7 @@ public class VideoDAO {
 		Connection conn = ConnectionManager.getConnection();
 		PreparedStatement pstmt = null;
 		try {
-			String query = "SELECT * FROM videos WHERE owner_username LIKE '%" + x + "%'";
+			String query = "SELECT * FROM VIDEOS WHERE owner_username LIKE '%" + x + "%'";
 			pstmt = conn.prepareStatement(query);
 			// pstmt.setString(1, x);
 			ResultSet rset = pstmt.executeQuery();
@@ -483,8 +483,8 @@ public class VideoDAO {
 		Connection conn = ConnectionManager.getConnection();
 		PreparedStatement pstmt = null;
 		try {
-			String query = "SELECT * FROM videos JOIN comment ON videos.video_id = comment.video_id WHERE comment.content LIKE'%"
-					+ x + "%' AND videos.deleted = 0 GROUP BY videos.video_name";
+			String query = "SELECT * FROM VIDEOS JOIN comment ON VIDEOS.video_id = comment.video_id WHERE comment.content LIKE'%"
+					+ x + "%' AND VIDEOS.deleted = 0 GROUP BY VIDEOS.video_name";
 			pstmt = conn.prepareStatement(query);
 			// pstmt.setString(1, x);
 			ResultSet rset = pstmt.executeQuery();

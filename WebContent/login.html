@@ -15,8 +15,9 @@
 	
 	<script>
 		$(document).ready(function(e) {
-		
-				$('#submitButton').click(function() {
+				$('#submitButton').click(function(e) {
+					e.preventDefault(); // !!
+					console.log("peraPERIC");
 					var username = $('#uname');
 					var password = $('#pass');
 					params = {
@@ -24,12 +25,8 @@
 								password : password.val()
 							 };
 					$.post('LoginServlet',params, function(data) {
-						console.log(data);
-						console.log("pera");
-						alert(data.msg);
-						//dodati paragrafe za failure
 					if(data.msg == 'Success') {
-						window.location.replace('http://localhost:8080/YouWatchIt/index.html');
+						window.location.replace('index.html');
 					} else {
 						username.val('');
 						password.val('');
