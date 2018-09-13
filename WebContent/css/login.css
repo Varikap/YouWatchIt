@@ -1,0 +1,33 @@
+img, p, input {
+	margin : auto;
+}
+
+img {
+	display: block;
+	position: absolute;
+	right: 46%;
+	width: 18%;
+	height: 18%;
+}
+
+p{
+	font-size: 18px;
+	display: inline;
+}
+
+div {
+	display: inline;
+}
+
+#sadrzaj {
+	position: absolute;
+	right: 46%;
+	top: 18%;
+}
+
+input {
+	padding : 4px;
+	font-size: 18px;
+	border: none;
+	border-bottom: 1px solid blue;
+}

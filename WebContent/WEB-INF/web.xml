@@ -37,4 +37,34 @@
     <servlet-name>GetVideos</servlet-name>
     <url-pattern>/GetVideos</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Profile</display-name>
+    <servlet-name>Profile</servlet-name>
+    <servlet-class>servlets.Profile</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Profile</servlet-name>
+    <url-pattern>/Profile</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Register</display-name>
+    <servlet-name>Register</servlet-name>
+    <servlet-class>servlets.Register</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Register</servlet-name>
+    <url-pattern>/Register</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>OneVideo</display-name>
+    <servlet-name>OneVideo</servlet-name>
+    <servlet-class>servlets.OneVideo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OneVideo</servlet-name>
+    <url-pattern>/OneVideo</url-pattern>
+  </servlet-mapping>
 </web-app>

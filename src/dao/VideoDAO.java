@@ -407,14 +407,14 @@ public class VideoDAO {
 
 			case "visibility":
 				Video_Visibility visibility = Video_Visibility.PUBLIC;
-				switch (value) {
-				case "Public":
+				switch (visibility) {
+				case PUBLIC:
 					visibility = Video_Visibility.PUBLIC;
 					break;
-				case "Unlisted":
+				case PRIVATE:
 					visibility = Video_Visibility.PRIVATE;
 					break;
-				case "Private":
+				case UNLISTED:
 					visibility = Video_Visibility.UNLISTED;
 					break;
 				}

@@ -1,0 +1,15 @@
+#autor{
+	float:left;
+}
+
+#author p {
+	font-size:13px;
+}
+
+date {
+	float: right;
+}
+
+#date p{
+	font-size:10px;
+}
